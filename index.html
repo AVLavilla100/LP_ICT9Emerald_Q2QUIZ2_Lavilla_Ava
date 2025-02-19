@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fly Word Online Tickets</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"; rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> 
+
+    <style>
+        body {
+            background-image: url('sky.jpg');
+            background-size: cover;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="container border border-dark bg-secondary mt-5 w-50 text-center p-3 rounded-5">
+        <h1>Fly World Online Tickets</h1>
+        <div class="container">
+            <details ontoggle="message()">
+                <summary>Instructions (Click me!)</summary>
+            </details>
+        </div>
+
+        <br>
+    
+        <form>
+
+            <input type="text" id="name" placeholder="Type Full Name Here.." style="margin-bottom: 10px; font-size: 25px; border-radius: 100px; width: 98%; text-align: center;">
+
+
+            <br>
+
+            <input type="email" id="email" placeholder="Type Email here..." style="margin-bottom: 10px; font-size: 25px; border-radius: 100px; width: 98%; text-align: center;">
+
+            <br>
+            
+            <button class="btn btn-outline-info" type="button" onclick="submit_info()">Submit Info</button>
+            
+
+        </form>
+
+        <br>
+
+        <h3>Ticket Price</h3>
+        <div class="container">
+            <details ontoggle="price()">
+                <summary>Instructions (Click me!)</summary>
+            </details>
+        </div>
+
+        <br>
+
+        <form>
+
+            <select class="form-select" id="seatprice" style="border-radius: 100px; font-size: 20px;">
+                <option value="none">Select A Seat</option>
+                <option value="230">Economy</option>
+                <option value="410">Business</option>
+                <option value="820">First Class</option>
+            </select>
+
+            <br>
+
+            <select class="form-select" id="discount" style="border-radius: 100px; font-size: 20px;">
+                <option value="none">Discount if:</option>
+                <option value="0.4">PWD</option>
+                <option value="0.3">Senior Citizen</option>
+                <option value="0.2">Student</option>
+            </select>
+
+            <br>
+            
+
+            <button class="btn btn-outline-info" type="button" onclick="seat_price()">See Ticket Price</button>
+        </form>
+
+        <br>
+
+        <div class="container">
+            <details ontoggle="ticket()">
+                <summary>VIEW AND PRINT TICKET</summary>
+                <br>
+                <img src="Screenshot 2025-02-19 125607.png" style="width:600px;height:200px;">
+                <br>
+                <br>
+                <button class="btn btn-danger" type="button" onclick="window.location.href=window.location.href">Make Another Ticket</button>
+            </details>
+        </div>
+
+
+    </div>
+
+        <script>
+            function message() {
+            alert("Fill out the form below.");
+            }
+
+            function price() {
+            alert("Fill out the form below to see seat price.");
+            }
+
+            function submit_info() {
+            var name = document.getElementById ('name').value;
+            var email = document.getElementById ('email').value;
+            var final_rate = (name + ' and ' + email)
+            window.alert('Information obtained: ' + final_rate);
+            }
+
+            function seat_price() {
+            var seat = document.getElementById ('seatprice').value;
+            var disc = document.getElementById ('discount').value;
+            var final_price = seat - (disc * seat);
+
+            window.alert('Your ticket price is ' + final_price + ' dollars');
+            }
+            
+        </script>
+    
+</body>
+</html>
